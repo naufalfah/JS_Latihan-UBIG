@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Final - Warkop Terbuka</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body style="font-family: monospace;" class="bg-gray-50">
+    <div class="min-h-screen flex justify-center">
+        <div class="flex flex-col">
+            <h1 class="text-center font-bold text-3xl mt-5">Kasir Warkop Terbuka</h1>
+
+            <!-- halaman utama -->
+            <div class="min-w-7xl p-10 flex items-start justify-around gap-8" id="halamanUtama">
+
+                <!-- Data Menu -->
+                <div id="judulMenu" class="p-2 bg-blue-500 w-full rounded-xl">
+                    <h1 class="text-white font-bold text-xl">Daftar Menu</h1>
+                    <div class="flex flex-col bg-white rounded-xl py-2 px-5 mt-2">
+                        <ul id="areaMenu">
+                            <li>Belum ada data</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Data Belanja -->
+                <div id="judulBelanja" class="p-2 bg-green-500 w-full rounded-xl">
+                    <h1 class="text-white font-bold text-xl">Daftar Belanja</h1>
+                    <div class="flex flex-col bg-white rounded-xl py-2 px-5 mt-2">
+                        <ul id="areaKeranjang" class="mt-2">
+                            <li>Belum ada data</li>
+                        </ul>
+                        <hr class="mt-7">
+                        <div class="flex pt-4 items-center justify-between items-center">
+                            <p class="font-sm font-bold">Total:</p>
+                            <p class="font-black text-lg text-green-800" id="totalHarga">Rp. 0</p>
+                        </div>
+                        <button type="button" onclick="prosesCheckout()" class="bg-green-500 text-white rounded-xl hover:bg-green-700 p-2 transition duration-300">Beli</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- halaman struk -->
+            <div id="halamanStruk" class="p-10 flex flex-col justify-center items-center hidden">
+                <div class="min-w-3xl bg-white shadow p-8 flex flex-col">
+                    <h1 class="text-center text-3xl font-bold pt-5">Pembayaran Berhasil</h1>
+                    <p class="text-center">Ini adalah rincian pesanan anda:</p>
+                    <hr class="mx-10 my-5">
+                    <!-- ISI -->
+                    <ul id="rincianPesanan" class="mx-10">
+                        <li>Tidak ada rincian</li>
+                    </ul>
+                    <hr class="mx-10 mt-5">
+                    <span id="totalBeli" class="flex justify-between items-center mx-10 mt-4">
+                        <p>Total:</p>
+                        <p>Rp. 0</p>
+                    </span>
+                    <button type="button" onclick="pesananSelesai()" class="mx-auto min-w-2xl mt-5 p-4 bg-blue-500 text-white font-bold hover:bg-blue-700 transition duration-300">Selesaikan &amp; Buat Pesanan Baru</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
